@@ -19,8 +19,8 @@ function Login() {
       if (response.data === 'Success') {
         toast.success(`User with email "${email}" has been Login successfully.`);
         setEmail("");
-        setPassword(""); 
-        setTimeout(() => navigate("/"), 2000);
+        setPassword("");
+        setTimeout(() => navigate("/book-hotel"), 2000);
       } else {
         toast.error('Incorrect Email or Password');
       }
@@ -57,8 +57,6 @@ function Login() {
             autoComplete="off"
           />
           <input type="submit" className="btn-1" value="Log-In" />
-          <Link to="/update" className="p-btn"><h3>Forget Password</h3></Link>
-          <Link to="/delete-user" className="p-btn"><h3>Delete User</h3></Link>
           <h3 className="spn">Doesn&apos;t have an account?</h3>
           <div className="btn-1">
             <Link to="/signup" className="l-btn">Sign-Up</Link>

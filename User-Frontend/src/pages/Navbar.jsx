@@ -21,7 +21,7 @@ function Navbar({ onSearch }) {
   return (
     <nav className="navbar-u navbar navbar-expand-lg nav1">
       <div className="container-fluid">
-        <Link to='/' className="navbar-brand">
+        <Link to='/book-hotel' className="navbar-brand">
           HotelHub
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,9 +36,7 @@ function Navbar({ onSearch }) {
           </form>
           <div className="profile">
                 <ul className=" navbar-nav ">
-                  <li><Link to="/profile">👤</Link></li>
                   <li><Link to="/login">Login</Link></li>
-                  {/* <li><Link to="/signup">Signup</Link></li> */}
                   </ul>
           </div>
                 </div>

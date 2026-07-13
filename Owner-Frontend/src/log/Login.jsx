@@ -21,8 +21,8 @@ function Login() {
         // navigate('/User');
         toast.success(`User with email "${email}" has been Login successfully.`);
         setEmail("");
-        setPassword(""); 
-        setTimeout(() => navigate("/ownerhome"), 2000);
+        setPassword("");
+        setTimeout(() => navigate("/add-hotel"), 2000);
       } else {
         toast.error('Incorrect Email or Password');
       }
@@ -41,8 +41,6 @@ function Login() {
           <input type="email" name="email" placeholder="Enter UserName or Email" value={email} className="box" onChange={(e) => setEmail(e.target.value)} required autoComplete="off" />
           <input type="password" name="password" placeholder="Enter Your Password" value={password} className="box" onChange={(e) => setPassword(e.target.value)} required autoComplete="off" />
           <input type="submit" className="btn-1" value="Log-In" />
-          <Link to="/update" className="p-btn"><h3>Forget Password</h3></Link>
-          <Link to="/delete-user" className="p-btn"><h3>Delete User</h3></Link>
           <h3 className="spn">Doesn&apos;t have an account?</h3>
           <div className="btn-1">
             <Link to="/signup" className="l-btn">Sign-Up</Link>
