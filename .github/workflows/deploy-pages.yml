@@ -59,6 +59,7 @@ jobs:
           cp -r Owner-Frontend/dist site/owner
           cp -r Admin-Frontend/dist site/admin
           cp .github/pages-landing/index.html site/index.html
+          cp .github/pages-landing/404.html site/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:

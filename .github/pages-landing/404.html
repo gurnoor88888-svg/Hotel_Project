@@ -5,7 +5,8 @@
     <title>Redirecting...</title>
     <script type="text/javascript">
       // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 2; // /Hotel_Project/owner
+      // Works for any /Hotel_Project/<app>/... deep link (user, owner, admin all keep 2 segments).
+      var pathSegmentsToKeep = 2;
 
       var l = window.location;
       l.replace(
