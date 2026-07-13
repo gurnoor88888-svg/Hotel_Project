@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hotel-project-backend
+    runtime: node
+    rootDir: Main-Backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
