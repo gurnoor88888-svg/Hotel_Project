@@ -70,6 +70,8 @@
 }
 
 .btn-1 {
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   background-color: var(--primary);
   color: white;

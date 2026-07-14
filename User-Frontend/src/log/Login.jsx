@@ -65,9 +65,7 @@ function Login() {
           />
           <input type="submit" className="btn-1" value={isSubmitting ? 'Logging in...' : 'Log-In'} disabled={isSubmitting} />
           <h3 className="spn">Doesn&apos;t have an account?</h3>
-          <div className="btn-1">
-            <Link to="/signup" className="l-btn">Sign-Up</Link>
-          </div>
+          <Link to="/signup" className="btn-1 l-btn">Sign-Up</Link>
         </form>
       </center>
     </>

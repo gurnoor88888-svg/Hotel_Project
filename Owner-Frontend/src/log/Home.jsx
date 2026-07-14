@@ -62,9 +62,7 @@ function Home() {
           <input type="password" name="password" placeholder="Enter Your Password" onChange={inpChange} className="box" required autoComplete="off" />
           <input type="submit" className="btn-1" value={isSubmitting ? 'Signing up...' : 'Sign-Up'} disabled={isSubmitting} />
           <h3 className="spn">Already have an account?</h3>
-          <div className="btn-1">
-            <Link to="/" className="l-btn">Log-In</Link>
-          </div>
+          <Link to="/" className="btn-1 l-btn">Log-In</Link>
         </form>
       </center>
       <ToastContainer />
