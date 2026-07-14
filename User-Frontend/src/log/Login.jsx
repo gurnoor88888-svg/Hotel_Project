@@ -35,6 +35,7 @@ function Login() {
       <ToastContainer position="top-center" autoClose={3000} />
       <center className="container">
         <form className="form" onSubmit={formSubmit}>
+        <div className="brand-badge">🏨</div>
         <div className="sign-up"><h1>Log-In</h1></div>
           <input
             type="email"

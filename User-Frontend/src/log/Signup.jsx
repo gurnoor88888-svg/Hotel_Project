@@ -55,6 +55,7 @@ function Signup() {
       <center className="container">
        
         <form onSubmit={formSubmit} className="form">
+          <div className="brand-badge">🏨</div>
           <h1>Sign-Up</h1>
           <input type="text" name="username" placeholder="Enter Your UserName" onChange={inpChange} className="box" required autoComplete="off"
           />

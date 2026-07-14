@@ -1,7 +1,10 @@
 /* General Styles */
 :root {
   --primary: #4f46e5;
+  --primary-light: #7c3aed;
   --primary-dark: #4338ca;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
   --bg: #eef1f8;
   --card-bg: #ffffff;
   --text: #1e293b;
@@ -17,9 +20,25 @@
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(79, 70, 229, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(124, 58, 237, 0.14) 0%, transparent 45%),
+    var(--bg);
   padding: 24px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.brand-badge {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
 }
 
 .form,
@@ -71,7 +90,7 @@
 
 .btn-1 {
   width: 100%;
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
   padding: 12px;
   border: none;
@@ -81,14 +100,38 @@
   margin: 14px 0 8px;
   font-size: 1rem;
   font-weight: 600;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn-1:hover {
-  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.35);
 }
 
 .btn-1:active {
+  transform: scale(0.98);
+}
+
+.btn-demo {
+  width: 100%;
+  background: transparent;
+  color: var(--accent-dark);
+  padding: 11px;
+  border: 2px dashed var(--accent);
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-demo:hover {
+  background-color: rgba(245, 158, 11, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-demo:active {
   transform: scale(0.98);
 }
 
