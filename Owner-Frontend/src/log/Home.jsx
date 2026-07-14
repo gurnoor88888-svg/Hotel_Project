@@ -9,6 +9,7 @@ import { API_URL } from '../config';
 function Home() {
   const [form, setForm] = useState({});
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const inpChange = (e) => {
     setForm({
@@ -25,25 +26,29 @@ function Home() {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-  
+    if (isSubmitting) return;
+
     if (!validatePassword(form.password)) {
       toast.error(
         'Password must be at least 8 characters long and include one uppercase letter, one lowercase letter, one number, and one special character.'
       );
       return;
     }
-  
+
+    setIsSubmitting(true);
     try {
       const response = await axios.post(`${API_URL}/api/Owners`, form);  // Correct URL
       const data = response.data;
-      if (data.success) {  
+      if (data.success) {
         toast.success('Signup successfully!');
         setTimeout(() => navigate("/"), 2000);
       } else {
         toast.error(data.message);
+        setIsSubmitting(false);
       }
     } catch (error) {
       toast.error('Error adding Sign-up Data: ' + error.message);
+      setIsSubmitting(false);
     }
   };
   
@@ -55,7 +60,7 @@ function Home() {
           <input type="text" name="username" placeholder="Enter Your UserName" onChange={inpChange} className="box" required autoComplete="off" />
           <input type="email" name="email" placeholder="Enter Your Email" onChange={inpChange} className="box" required autoComplete="off" />
           <input type="password" name="password" placeholder="Enter Your Password" onChange={inpChange} className="box" required autoComplete="off" />
-          <input type="submit" className="btn-1" value="Sign-Up" />
+          <input type="submit" className="btn-1" value={isSubmitting ? 'Signing up...' : 'Sign-Up'} disabled={isSubmitting} />
           <h3 className="spn">Already have an account?</h3>
           <div className="btn-1">
             <Link to="/" className="l-btn">Log-In</Link>

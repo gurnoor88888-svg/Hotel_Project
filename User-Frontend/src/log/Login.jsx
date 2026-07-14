@@ -11,9 +11,12 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     try {
       const response = await axios.post(`${API_URL}/api/users/login`, { email, password });
       if (response.data === 'Success') {
@@ -24,10 +27,12 @@ function Login() {
         setTimeout(() => navigate("/book-hotel"), 2000);
       } else {
         toast.error('Incorrect Email or Password');
+        setIsSubmitting(false);
       }
     } catch (error) {
       toast.error('Server error. Please try again later.');
       console.error('Error:', error);
+      setIsSubmitting(false);
     }
   };
 
@@ -58,7 +63,7 @@ function Login() {
             required
             autoComplete="off"
           />
-          <input type="submit" className="btn-1" value="Log-In" />
+          <input type="submit" className="btn-1" value={isSubmitting ? 'Logging in...' : 'Log-In'} disabled={isSubmitting} />
           <h3 className="spn">Doesn&apos;t have an account?</h3>
           <div className="btn-1">
             <Link to="/signup" className="l-btn">Sign-Up</Link>
