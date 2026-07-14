@@ -102,8 +102,13 @@ const BookHotel = () => {
       <Navbar onSearch={handleSearch} />
       <ToastContainer />
 
+      <div className="hero-heading">
+        <h1>Find Your Perfect Stay</h1>
+        <p>Handpicked hotels across India, ready to book in seconds.</p>
+      </div>
+
       {filteredRooms.length === 0 ? (
-        <p>No rooms found matching your search criteria.</p>
+        <p className="empty-state">No rooms found matching your search criteria.</p>
       ) : (
         <div className="container-r">
           {filteredRooms.map((room) => (
@@ -121,10 +126,11 @@ const BookHotel = () => {
                 <div className="col-md-4">
                   <div className="card-body">
                     <h2 className="card-title">{room.name}</h2>
-                    <h5 className="card-description">Room-Type : {room.roomtype}</h5>
-                    <h5 className="card-max-guests">Max Guests: {room.maxGuests}</h5>
-                    <h5 className="card-description">City : {room.city}</h5>
-                    <h5 className="card-description">Area : {room.area}</h5>
+                    <span className="room-badge">{room.roomtype}</span>
+                    <ul className="detail-list">
+                      <li>👥 {room.maxGuests} Guests</li>
+                      <li>📍 {room.area}, {room.city}</li>
+                    </ul>
                   </div>
                 </div>
                 <div className="col-md-4">
@@ -132,7 +138,7 @@ const BookHotel = () => {
                     <div className="rating">
                       <StarRating rating={room.rating} onRatingChange={() => {}} />
                     </div>
-                    <h5 className="price">Price: {room.price} ₹ per night</h5>
+                    <h5 className="price">₹{room.price} <span>/ night</span></h5>
                     <h5 className="price1">Includes taxes and charges</h5>
                     <Button variant="primary" onClick={() => toggleBooking(room._id)} className="book-btn">
                       {bookingRoomId === room._id ? "Cancel" : "Book Now"}

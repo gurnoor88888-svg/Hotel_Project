@@ -1,4 +1,32 @@
 /* Default Styles */
+.hero-heading {
+  text-align: center;
+  padding: 2.5rem 1.5rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.hero-heading h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  background: linear-gradient(135deg, #1e293b, #4f46e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-heading p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 3rem 1rem;
+  font-size: 1.05rem;
+}
+
 .container-r {
   display: grid;
   gap: 1.25rem;
@@ -8,8 +36,6 @@
 }
 
 .card-r {
-  display: flex;
-  flex-direction: column;
   border: 1px solid #e2e8f0;
   background-color: #ffffff;
   border-radius: 14px;
@@ -25,12 +51,36 @@
 }
 
 .card-body {
-  padding: 1rem;
+  padding: 1.1rem;
 }
 
 .room-carousel img {
-  max-width: 100%;
-  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+.room-badge {
+  display: inline-block;
+  background: rgba(79, 70, 229, 0.1);
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.9;
 }
 
 .book-btn {
@@ -55,171 +105,45 @@
 .card-title {
   color: #1e293b;
   font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.card-description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #475569;
+  margin-bottom: 6px;
 }
 
 .price {
   color: #1e293b;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+.price span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
 }
 
 .price1 {
   color: #94a3b8;
   font-size: 0.85rem;
+  margin-bottom: 12px;
 }
 
 .booking-panel {
   border-top: 1px solid #e2e8f0;
   background-color: #f8fafc;
+  padding: 1.1rem;
 }
 
-/* Extra Small Devices (Phones) */
-@media (max-width: 576px) {
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-    padding-bottom: 2%;
-  }
-  .card-body {
-    padding: 0.8rem;
-    text-align: center;
-  }
+/* Two-column layout once the row can fit image | details | price side by side */
+@media (min-width: 768px) {
   .room-carousel img {
-    height: 35vh;
-    width: 52vh;
+    height: 100%;
+    min-height: 240px;
+    border-radius: 14px 0 0 14px;
   }
+}
+
+@media (max-width: 576px) {
   .star-rating {
     display: flex;
-    font-size: 30px;
-    margin-left: 30%;
-    margin-top: -8%;
+    font-size: 24px;
   }
-  .book-btn {
-    margin-top: 7%;
-  }
-}
-
-/* Small Devices (Tablets, Landscape Phones) */
-@media (min-width: 576px) and (max-width: 770px) {
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-    text-align: center;
-  }
-  .star-rating {
-    font-size: 30px;
-    margin-top: -30px;
-    margin-left: 40%;
-    text-align: center;
-  }
-  .room-carousel img {
-    height: 25vh;
-    width: 100%;
-  }
-  .book-btn {
-    margin-top: 7%;
-  }
-}
-
-
-/* Medium Devices (Tablets) */
-@media (min-width: 768px) and (max-width: 992px) {
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-  }
-  .star-rating {
-    font-size: 30px;
-    margin-left: 10%;
-  }
-  .room-carousel img {
-    height: 25vh;
-    width: 35vh;
-  }
-  .book-btn {
-    margin-top: 10%;
-  }
-}
-
-/* Large Devices (Desktops, Laptops) */
-@media (min-width: 992px) and (max-width: 1200px) {
- 
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-    width: 90%;
-    max-width: 150vh;
-  }
-  .card-body {
-    padding: 0.8rem;
-    margin-left: 5%;
-  }
-  .star-rating {
-    font-size: 30px;
-    margin-left: 10%;
-  }
-  .room-carousel img {
-    height: 45vh;
-    width: 50vh;
-  }
-  .book-btn {
-    margin-top: 15%;
-  }
-
-}
-
-/* Extra Large Devices (Large Screens, TVs) */
-@media (min-width: 1200px) and (max-width: 1400px) {
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-    width: 90%;
-    max-width: 150vh;
-  }
-  .card-body {
-    padding: 0.8rem;
-    margin-left: 5%;
-  }
-  .star-rating {
-    font-size: 30px;
-    margin-left: 10%;
-  }
-  .room-carousel img {
-    height: 45vh;
-    width: 50vh;
-  }
-  .book-btn {
-    margin-top: 15%;
-  }
-
-}
-@media (min-width: 1400px) {
-  .card-r {
-    flex-direction: column;
-    margin: 2% auto;
-    width: 90%;
-    max-width: 150vh;
-  }
-  .card-body {
-    padding: 0.8rem;
-    margin-left: 5%;
-  }
-  .star-rating {
-    font-size: 30px;
-    margin-left: 10%;
-  }
-  .room-carousel img {
-    height: 38vh;
-    width: 50vh;
-  }
-  .book-btn {
-    margin-top: 25%;
-  }
-
 }
