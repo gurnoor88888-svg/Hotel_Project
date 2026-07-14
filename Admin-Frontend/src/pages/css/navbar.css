@@ -1,117 +1,27 @@
 /* Base Navbar Styles */
 .navbar {
-    background-color: #776bff;
-    padding: 10px 20px;
-    position: sticky;
-    z-index: 1000;
-    top: 1px;
-    font-family: "Times New Roman", Times, serif;
-  }
-  
-  .container-fluid span {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-  }
-  .container-fluid span:hover {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-  }
-  
-  .navbar-brand:hover {
-    color: #f1f1f1;
-    transform: scale(1.1);
-  }
-  
-  .navbar-toggler {
-    background-color: #fff;
-    border: none;
-  }
-  
+  background-color: #ffffff;
+  padding: 14px 24px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-  
-  .navbar-collapse {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-collapse a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 18px;
-  }
-  
-  .navbar-collapse a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Profile Styles */
-  .profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .placeholder-icon {
-    font-size: 24px;
-  }
-  
-  /* Responsive Design */
-  
-  /* Extra Small Devices (Mobile Phones) */
-  @media (max-width: 576px) {
-    .navbar-collapse {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .navbar-collapse a {
-      margin-bottom: 10px;
-    }
-  }
-  
-  /* Small Devices (Tablets, Portrait) */
-  @media (min-width: 576px) and (max-width: 768px) {
-    .navbar-collapse {
-      justify-content: space-between;
-    }
-  
-    .navbar-collapse a {
-      margin-left: auto;
-      font-size: 16px;
-    }
-  }
-  
-  /* Medium Devices (Larger Tablets and Small Laptops) */
-  @media (min-width: 768px) and (max-width: 992px) {
-    .navbar-collapse {
-      justify-content: flex-end;
-    }
-  
-    .navbar-collapse a {
-      font-size: 18px;
-      margin-left: 25px;
-    }
-  }
-  
-  /* Large Devices (Desktops) */
-  @media (min-width: 992px) {
-    .navbar-collapse {
-      justify-content: flex-end;
-    }
-  
-    .navbar-collapse a {
-      font-size: 20px;
-      margin-left: 30px;
-    }
-  }
-  
+.container-fluid span {
+  color: #4f46e5;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  color: #4f46e5;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  color: #4338ca;
+}

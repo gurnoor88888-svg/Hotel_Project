@@ -1,6 +1,6 @@
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import { Link } from 'react-router-dom';
 import './css/footer.css';
 
 function Footer() {
@@ -14,11 +14,7 @@ function Footer() {
                 <div className="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/userdata">User</a></li>
-                        <li><a href="/ownerdata">Owner</a></li>
-                        <li><a href="/hoteldata">Hotels</a></li>
-                        <li><a href="/bookroom">Book-Room</a></li>
-                        
+                        <li><Link to="/bookroom">Bookings</Link></li>
                     </ul>
                 </div>
                 <div className="footer-section">

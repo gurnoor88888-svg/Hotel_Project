@@ -1,9 +1,9 @@
 /* footer.css */
 .footer {
-    background: #111;
+    background: #0f172a;
     padding: 40px 20px;
     color: white;
-    font-family: "Times New Roman", Times, serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .footer-content {
@@ -33,12 +33,12 @@
 }
 
 .footer-section a {
-    color: #ddd;
+    color: #cbd5e1;
     text-decoration: none;
 }
 
 .footer-section a:hover {
-    color: #fff;
+    color: #818cf8;
 }
 
 .social-icons {
