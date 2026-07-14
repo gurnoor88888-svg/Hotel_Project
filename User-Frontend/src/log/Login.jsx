@@ -18,6 +18,7 @@ function Login() {
       const response = await axios.post(`${API_URL}/api/users/login`, { email, password });
       if (response.data === 'Success') {
         toast.success(`User with email "${email}" has been Login successfully.`);
+        localStorage.setItem('hotelhub_user', JSON.stringify({ email }));
         setEmail("");
         setPassword("");
         setTimeout(() => navigate("/book-hotel"), 2000);
